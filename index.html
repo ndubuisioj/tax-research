@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f3f4ee">
+    <title>Fieldwork Tax | Research Desk</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="wordmark" href="#research" aria-label="Fieldwork Tax home">
+        <span class="mark" aria-hidden="true">F</span>
+        <span>fieldwork<span class="wordmark-light"> / tax</span></span>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <button class="nav-link is-active" type="button" data-view="research" aria-current="page">Research</button>
+        <button class="nav-link" type="button" data-view="practice">Practice</button>
+      </nav>
+      <div class="topbar-right">
+        <span class="edition-label">UNITED STATES</span>
+        <span class="user-avatar" aria-label="Account">JD</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="view is-visible" id="research-view" aria-labelledby="page-title">
+        <div class="page-heading">
+          <div>
+            <p class="eyebrow">RESEARCH DESK <span class="eyebrow-dot"></span> FEDERAL</p>
+            <h1 id="page-title">Find the authority.<br><em>Follow the thread.</em></h1>
+          </div>
+        </div>
+
+        <form class="search-form" id="search-form" role="search">
+          <span class="search-icon" aria-hidden="true">⌕</span>
+          <label class="visually-hidden" for="research-query">Search tax topics and authorities</label>
+          <input id="research-query" type="search" value="business meals" placeholder="Search a tax question, code section, or topic">
+          <button type="submit" class="search-button">Search <span aria-hidden="true">↗</span></button>
+        </form>
+
+        <div class="topic-row" aria-label="Suggested topics">
+          <span class="topic-label">EXPLORE</span>
+          <button type="button" class="topic-chip" data-query="business meals">Business meals</button>
+          <button type="button" class="topic-chip" data-query="home office">Home office</button>
+          <button type="button" class="topic-chip" data-query="estimated tax">Estimated tax</button>
+          <button type="button" class="topic-chip" data-query="filing status">Filing status</button>
+        </div>
+
+        <div class="research-layout">
+          <section class="results-column" aria-labelledby="results-heading">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">SOURCE INDEX</p>
+                <h2 id="results-heading">Business meals</h2>
+              </div>
+              <span class="result-count" id="result-count">4 SOURCES</span>
+            </div>
+            <div class="source-list" id="source-list" aria-live="polite"></div>
+            <p class="empty-state" id="empty-state" hidden>No matching sources. Try a broader topic or a Code section.</p>
+          </section>
+
+          <aside class="side-column">
+            <section class="saved-panel" aria-labelledby="saved-heading">
+              <div class="panel-heading">
+                <div>
+                  <p class="eyebrow">YOUR DESK</p>
+                  <h2 id="saved-heading">Saved sources</h2>
+                </div>
+                <span class="saved-count" id="saved-count">0</span>
+              </div>
+              <div id="saved-list" class="saved-list">
+                <p class="saved-empty">References you save will be collected here.</p>
+              </div>
+            </section>
+
+            <section class="practice-callout" aria-labelledby="practice-callout-heading">
+              <div class="callout-topline"><span class="callout-index">FIELD NOTE 01</span><span class="callout-spark" aria-hidden="true">✳</span></div>
+              <p class="eyebrow">PUT IT TO WORK</p>
+              <h2 id="practice-callout-heading">A client meal.<br>Three rules to trace.</h2>
+              <p>Test your research path through business meal deductibility and substantiation.</p>
+              <button type="button" class="text-action" data-view="practice">Open practice <span aria-hidden="true">→</span></button>
+            </section>
+
+            <p class="disclaimer">Research aid only. Confirm current law and facts before relying on a conclusion.</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="view practice-view" id="practice-view" aria-labelledby="practice-title" hidden>
+        <div class="practice-heading">
+          <p class="eyebrow">PRACTICE ROOM <span class="eyebrow-dot"></span> RESEARCH METHOD</p>
+          <h1 id="practice-title">Work the facts.<br><em>Then find the rule.</em></h1>
+          <p class="practice-intro">Short tax scenarios for sharpening your authority trail.</p>
+        </div>
+        <div class="practice-layout">
+          <div class="scenario-card" aria-live="polite">
+            <div class="scenario-meta"><span id="scenario-number">SCENARIO 01 / 03</span><span id="scenario-topic">BUSINESS EXPENSES</span></div>
+            <h2 id="scenario-title"></h2>
+            <p id="scenario-facts" class="scenario-facts"></p>
+            <div class="scenario-question">
+              <span class="question-mark" aria-hidden="true">?</span>
+              <p id="scenario-question"></p>
+            </div>
+            <div id="answer-panel" class="answer-panel" hidden>
+              <p class="eyebrow">RESEARCH TRAIL</p>
+              <p id="scenario-answer"></p>
+              <div id="scenario-links" class="scenario-links"></div>
+            </div>
+            <div class="scenario-actions">
+              <button type="button" id="reveal-answer" class="search-button">Reveal research trail <span aria-hidden="true">↗</span></button>
+              <button type="button" id="next-scenario" class="next-button" hidden>Next scenario <span aria-hidden="true">→</span></button>
+            </div>
+          </div>
+          <aside class="practice-aside">
+            <span class="aside-number">01</span>
+            <p class="eyebrow">A GOOD RESEARCH HABIT</p>
+            <h2>Start with the statute. Check the guidance.</h2>
+            <p>Trace the rule to its authority, then verify the facts, exceptions, and version that apply.</p>
+            <div class="aside-rule"></div>
+            <p class="disclaimer">Scenarios are educational, not tax advice. Confirm all conclusions using current primary authority.</p>
+          </aside>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer"><span>FIELDWORK / TAX</span><span>RESEARCH WITH THE SOURCE IN VIEW</span></footer>
+  </body>
+</html>
